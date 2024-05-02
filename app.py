@@ -12,6 +12,7 @@ import numpy as np
 
 
 def main():
+    st.set_option('deprecation.showfileUploaderEncoding', False)
     st.title('K-Means 클러스터링 앱')
     st.text('csv 파일을 업로드 하면, 비슷한 유형의 데이터끼리 묶어주는 앱입니다.')
 
