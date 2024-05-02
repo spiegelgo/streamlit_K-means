@@ -12,21 +12,13 @@ import numpy as np
 
 
 def main():
-    # 한글 폰트 경로
-    font_path = "/usr/share/fonts/NanumGothic.ttf"  
+    # 스트림릿 한글 폰트 설정
+    import platform
+    from matplotlib import font_manager, rc
+    plt.rcParams['axes.unicode_minus'] = False
+    if platform.system() == 'Linux':
+        rc('font', family='NanumGothic')
 
-    # 한글 폰트 설정
-    st.markdown(f"""
-        <style>
-            @font-face {{
-                font-family: your_font;
-                src: url('data:font/truetype;charset=utf-8;base64,{font_path}') format('truetype');
-            }}
-            body {{
-                font-family: your_font;
-            }}
-        </style>
-    """, unsafe_allow_html=True)
     st.title('K-Means 클러스터링 앱')
     st.text('csv 파일을 업로드 하면, 비슷한 유형의 데이터끼리 묶어주는 앱입니다.')
 
