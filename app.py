@@ -10,7 +10,7 @@ import numpy as np
 from matplotlib import font_manager, rc
 
 # 한글 폰트 설정
-font_path = "C:/Windows/Fonts/malgunsl.ttf"  # 한글 폰트 경로 
+font_path = "./font/malgunsl.ttf"  # 한글 폰트 경로 
 font_name = font_manager.FontProperties(fname=font_path).get_name()
 rc('font', family=font_name)
 
