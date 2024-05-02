@@ -7,12 +7,9 @@ from sklearn.compose import ColumnTransformer
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib import font_manager, rc
 
-# 한글 폰트 설정
-font_path = "./font/malgunsl.ttf"  # 한글 폰트 경로 
-font_name = font_manager.FontProperties(fname=font_path).get_name()
-rc('font', family=font_name)
+
+
 
 def main():
     st.title('K-Means 클러스터링 앱')
