@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import base64
 
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 from sklearn.compose import ColumnTransformer
@@ -136,6 +137,12 @@ def main():
             choice = st.selectbox('그룹을 선택하세요',np.arange(0,k))
             st.dataframe(df.loc[df['Group'] == choice, ])
             
-                
+            # 13. 유저가 다운로드 할 수 있게 한다
+
+            csv = df.to_csv(index=False)
+            b64 = base64.b64encode(csv.encode()).decode()
+            href = f'<a href="data:file/csv;base64,{b64}"</a>'
+            st.download_button(label="CSV 파일 저장", data=href, file_name="new_data.csv", mime="text/csv")    
+                    
 if __name__ == '__main__' :
     main()
