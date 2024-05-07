@@ -21,7 +21,7 @@ def main():
         rc('font', family='NanumGothic')
 
     st.title('K-Means 클러스터링 앱')
-    st.text('csv 파일을 업로드 하면, 비슷한 유형의 데이터끼리 묶어주는 앱입니다.')
+    st.markdown('csv 파일을 업로드 하면, 비슷한 유형의 데이터끼리 묶어주는 앱입니다.')
 
     # 1. csv 파일 업로드
     file = st.file_uploader('CSV파일 업로드', type=['csv'])
